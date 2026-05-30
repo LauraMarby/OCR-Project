@@ -1,0 +1,22 @@
+════════════════════════════════════════════════════════════
+  COMPARACIÓN DE MODELOS — TEST SET REAL
+════════════════════════════════════════════════════════════
+  Muestras evaluadas  : 706
+
+  Métrica                          crnn trocr_finetuned
+  ──────────────────────────────────────────────────
+  CER global                    0.3365         0.0919
+  WER global                    0.7035         0.2375
+  CER medio ± std         0.3761±0.2274   0.1039±0.1251
+  CER mediana                   0.3779         0.0583
+
+  ── Test de normalidad (Shapiro-Wilk sobre diferencias pareadas) ──
+  Shapiro-Wilk  W=0.9752  p=0.0000
+  → Distribución de diferencias: NO NORMAL (α=0.05)
+
+  ── Test seleccionado: Wilcoxon signed-rank ──
+  stat=602.5  p=0.0000
+
+  → Diferencia SIGNIFICATIVA (p < 0.05)
+  → Mejor modelo: trocr_finetuned
+════════════════════════════════════════════════════════════

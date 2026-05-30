@@ -1,0 +1,15 @@
+======================================================================
+ RESUMEN GLOBAL
+======================================================================
+  Documentos generados:        17
+  Segmentos procesados:        256
+  CER global (micro, chars):   0.1281
+  CER macro (prom. segmentos): 0.1139
+  CER macro (prom. documentos):0.1141
+  CER segmento mejor / peor:   0.0000 / 0.7692
+  Segmentos perfectos:         52/256
+
+  TXT por documento → docs\docs/
+  TXT ground-truth  → docs\docs_gt/
+  CER por segmento  → docs\trocr_segments.csv
+  CER por documento → docs\trocr_docs_cer.json

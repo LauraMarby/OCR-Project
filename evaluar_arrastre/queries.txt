@@ -1,0 +1,18 @@
+q01	sonetos clásicos del Siglo de Oro español sobre el amor y sus contradicciones
+q02	poemas que describen el amor como un estado de emociones opuestas y paradójicas
+q03	textos que expresan nostalgia por un amor pasado y el deseo de recordarlo
+q04	cartas de amor escritas a una persona que ya no está presente
+q05	composiciones poéticas dedicadas a la noche y a la oscuridad
+q06	textos sobre fortaleza interior y resiliencia ante la adversidad
+q07	escritos que reflejan tristeza profunda, depresión o crisis emocional
+q08	declaraciones de amor incondicional aceptando a la persona tal como es
+q09	poemas que asocian el ser amado con la naturaleza y los sentidos
+q10	documentos administrativos sobre presupuesto y obras públicas municipales
+q11	textos sobre el efecto emocional y estético del color en el espectador
+q12	correspondencia familiar sobre recuerdos y lugares del pasado
+q13	textos escritos en portugués sobre planes y saludos
+q14	poemas donde el amor se vincula con los libros y el vino
+q15	versos sobre el silencio compartido entre dos amantes
+q16	reflexiones sobre el paso del tiempo, el olvido y la memoria que se desvanece
+q17	movimiento de intervención poética urbana con mensajes románticos breves
+q18	textos que entienden el sufrimiento como condición necesaria para gozar el amor

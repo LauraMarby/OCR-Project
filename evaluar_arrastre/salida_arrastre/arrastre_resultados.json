@@ -1,0 +1,824 @@
+{
+  "system": "hybrid (BM25+E5+RRF)",
+  "config": {
+    "docs": "docs/docs",
+    "docs_gt": "docs/docs_gt",
+    "queries": "queries.txt",
+    "qrels": "qrels.txt",
+    "cer": "cer_por_doc.csv",
+    "model": "models\\models--intfloat--multilingual-e5-small\\snapshots\\614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "ks": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "top_k": 1000,
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "rrf_k": 60,
+    "binary_threshold": 1
+  },
+  "n_queries": 18,
+  "n_judged": 18,
+  "cer_corpus_mean": 0.11412923529411764,
+  "aggregated_gt": {
+    "r_prec": 0.5509259259259259,
+    "map": 0.6454109132213708,
+    "mrr": 0.7888888888888889,
+    "p@1": 0.6666666666666666,
+    "r@1": 0.38425925925925924,
+    "f1@1": 0.45555555555555555,
+    "p@3": 0.3888888888888889,
+    "r@3": 0.5925925925925926,
+    "f1@3": 0.43783068783068785,
+    "p@5": 0.3111111111111111,
+    "r@5": 0.7546296296296297,
+    "f1@5": 0.41468253968253965,
+    "p@10": 0.19444444444444445,
+    "r@10": 0.8935185185185185,
+    "f1@10": 0.30745180745180745,
+    "ndcg@1": 0.6296296296296297,
+    "ndcg@3": 0.585876720577577,
+    "ndcg@5": 0.6739728595059155,
+    "ndcg@10": 0.7314142194537333
+  },
+  "aggregated_trocr": {
+    "r_prec": 0.49074074074074076,
+    "map": 0.6180054513387847,
+    "mrr": 0.7296296296296296,
+    "p@1": 0.6666666666666666,
+    "r@1": 0.38425925925925924,
+    "f1@1": 0.45555555555555555,
+    "p@3": 0.37037037037037035,
+    "r@3": 0.5185185185185185,
+    "f1@3": 0.40105820105820106,
+    "p@5": 0.2777777777777778,
+    "r@5": 0.6111111111111112,
+    "f1@5": 0.3602292768959436,
+    "p@10": 0.20555555555555557,
+    "r@10": 0.9444444444444444,
+    "f1@10": 0.3253598253598254,
+    "ndcg@1": 0.5555555555555556,
+    "ndcg@3": 0.5330314038872837,
+    "ndcg@5": 0.5724237153634918,
+    "ndcg@10": 0.6870192775710786
+  },
+  "relative_degradation": {
+    "r_prec": {
+      "gt": 0.5509259259259259,
+      "ocr": 0.49074074074074076,
+      "abs_drop": 0.060185185185185175,
+      "rel_pct": 10.924369747899158
+    },
+    "map": {
+      "gt": 0.6454109132213708,
+      "ocr": 0.6180054513387847,
+      "abs_drop": 0.02740546188258608,
+      "rel_pct": 4.246203669814029
+    },
+    "mrr": {
+      "gt": 0.7888888888888889,
+      "ocr": 0.7296296296296296,
+      "abs_drop": 0.059259259259259234,
+      "rel_pct": 7.511737089201875
+    },
+    "p@1": {
+      "gt": 0.6666666666666666,
+      "ocr": 0.6666666666666666,
+      "abs_drop": 0.0,
+      "rel_pct": 0.0
+    },
+    "r@1": {
+      "gt": 0.38425925925925924,
+      "ocr": 0.38425925925925924,
+      "abs_drop": 0.0,
+      "rel_pct": 0.0
+    },
+    "f1@1": {
+      "gt": 0.45555555555555555,
+      "ocr": 0.45555555555555555,
+      "abs_drop": 0.0,
+      "rel_pct": 0.0
+    },
+    "p@3": {
+      "gt": 0.3888888888888889,
+      "ocr": 0.37037037037037035,
+      "abs_drop": 0.018518518518518545,
+      "rel_pct": 4.761904761904769
+    },
+    "r@3": {
+      "gt": 0.5925925925925926,
+      "ocr": 0.5185185185185185,
+      "abs_drop": 0.07407407407407407,
+      "rel_pct": 12.5
+    },
+    "f1@3": {
+      "gt": 0.43783068783068785,
+      "ocr": 0.40105820105820106,
+      "abs_drop": 0.03677248677248679,
+      "rel_pct": 8.398791540785503
+    },
+    "p@5": {
+      "gt": 0.3111111111111111,
+      "ocr": 0.2777777777777778,
+      "abs_drop": 0.033333333333333326,
+      "rel_pct": 10.714285714285712
+    },
+    "r@5": {
+      "gt": 0.7546296296296297,
+      "ocr": 0.6111111111111112,
+      "abs_drop": 0.1435185185185185,
+      "rel_pct": 19.018404907975455
+    },
+    "f1@5": {
+      "gt": 0.41468253968253965,
+      "ocr": 0.3602292768959436,
+      "abs_drop": 0.05445326278659607,
+      "rel_pct": 13.131313131313119
+    },
+    "p@10": {
+      "gt": 0.19444444444444445,
+      "ocr": 0.20555555555555557,
+      "abs_drop": -0.011111111111111127,
+      "rel_pct": -5.714285714285722
+    },
+    "r@10": {
+      "gt": 0.8935185185185185,
+      "ocr": 0.9444444444444444,
+      "abs_drop": -0.05092592592592593,
+      "rel_pct": -5.699481865284975
+    },
+    "f1@10": {
+      "gt": 0.30745180745180745,
+      "ocr": 0.3253598253598254,
+      "abs_drop": -0.017908017908017937,
+      "rel_pct": -5.8246585233768675
+    },
+    "ndcg@1": {
+      "gt": 0.6296296296296297,
+      "ocr": 0.5555555555555556,
+      "abs_drop": 0.07407407407407407,
+      "rel_pct": 11.76470588235294
+    },
+    "ndcg@3": {
+      "gt": 0.585876720577577,
+      "ocr": 0.5330314038872837,
+      "abs_drop": 0.052845316690293354,
+      "rel_pct": 9.01986968149147
+    },
+    "ndcg@5": {
+      "gt": 0.6739728595059155,
+      "ocr": 0.5724237153634918,
+      "abs_drop": 0.10154914414242366,
+      "rel_pct": 15.067245321550276
+    },
+    "ndcg@10": {
+      "gt": 0.7314142194537333,
+      "ocr": 0.6870192775710786,
+      "abs_drop": 0.04439494188265469,
+      "rel_pct": 6.069740059991131
+    }
+  },
+  "significance_tests": {
+    "name_a": "hybrid_GT",
+    "name_b": "hybrid_TrOCR",
+    "n_common_queries": 18,
+    "alpha": 0.05,
+    "multiple_comparison": "holm",
+    "n_resamples": 10000,
+    "seed": 42,
+    "tests": {
+      "ap": {
+        "mean_a": 0.6454109132213708,
+        "mean_b": 0.6180054513387847,
+        "delta": 0.02740546188258608,
+        "rel_delta": 0.044345016412424276,
+        "normality": {
+          "statistic": 0.9091025582999721,
+          "p_value": 0.0829570059844694,
+          "is_normal": true
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.954698429734882,
+        "t_test": {
+          "t": 0.3779799385582857,
+          "p_value": 0.7101235704148958,
+          "mean_diff": 0.02740546188258607,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 59.0,
+          "p_value": 0.954698429734882,
+          "n_nonzero": 15
+        },
+        "permutation": {
+          "observed_mean_diff": 0.027405461882586066,
+          "p_value": 0.7267273272672733,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.08909072590234614,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.10763324411608728,
+          "ci_high": 0.1763770731356515,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "rr": {
+        "mean_a": 0.7888888888888889,
+        "mean_b": 0.7296296296296296,
+        "delta": 0.059259259259259234,
+        "rel_delta": 0.08121827411167509,
+        "normality": {
+          "statistic": 0.85632582247101,
+          "p_value": 0.010672658131787877,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.44921875,
+        "t_test": {
+          "t": 0.6199891178761222,
+          "p_value": 0.5434867832173619,
+          "mean_diff": 0.05925925925925926,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 15.5,
+          "p_value": 0.44921875,
+          "n_nonzero": 9
+        },
+        "permutation": {
+          "observed_mean_diff": 0.05925925925925926,
+          "p_value": 0.5521447855214479,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.14613283650402392,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.12408564814814807,
+          "ci_high": 0.24444444444444446,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "r_prec": {
+        "mean_a": 0.5509259259259259,
+        "mean_b": 0.49074074074074076,
+        "delta": 0.060185185185185175,
+        "rel_delta": 0.12264150943396224,
+        "normality": {
+          "statistic": 0.8333641716474847,
+          "p_value": 0.004680464076616501,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.484375,
+        "t_test": {
+          "t": 0.6025557430481837,
+          "p_value": 0.5547575911505385,
+          "mean_diff": 0.06018518518518518,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 9.5,
+          "p_value": 0.484375,
+          "n_nonzero": 7
+        },
+        "permutation": {
+          "observed_mean_diff": 0.060185185185185196,
+          "p_value": 0.595040495950405,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.1420237506507565,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.13425925925925924,
+          "ci_high": 0.25,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "ndcg@1": {
+        "mean_a": 0.6296296296296297,
+        "mean_b": 0.5555555555555556,
+        "delta": 0.07407407407407407,
+        "rel_delta": 0.13333333333333333,
+        "normality": {
+          "statistic": 0.8558764937040246,
+          "p_value": 0.010497615072257337,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.671875,
+        "t_test": {
+          "t": 0.5787705672009662,
+          "p_value": 0.5703335108739758,
+          "mean_diff": 0.07407407407407408,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 14.5,
+          "p_value": 0.671875,
+          "n_nonzero": 8
+        },
+        "permutation": {
+          "observed_mean_diff": 0.07407407407407408,
+          "p_value": 0.6232376762323768,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.13641753093966252,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.18518518518518517,
+          "ci_high": 0.3148148148148148,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "ndcg@3": {
+        "mean_a": 0.585876720577577,
+        "mean_b": 0.5330314038872835,
+        "delta": 0.052845316690293465,
+        "rel_delta": 0.09914109432371887,
+        "normality": {
+          "statistic": 0.916902653135653,
+          "p_value": 0.11393365863005472,
+          "is_normal": true
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.7001953125,
+        "t_test": {
+          "t": 0.5783229406413791,
+          "p_value": 0.5706288102486454,
+          "mean_diff": 0.05284531669029339,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 28.0,
+          "p_value": 0.7001953125,
+          "n_nonzero": 11
+        },
+        "permutation": {
+          "observed_mean_diff": 0.05284531669029338,
+          "p_value": 0.5740425957404259,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.1363120243477548,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.11470050858239977,
+          "ci_high": 0.2342667344880751,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "ndcg@5": {
+        "mean_a": 0.6739728595059155,
+        "mean_b": 0.5724237153634918,
+        "delta": 0.10154914414242366,
+        "rel_delta": 0.1774020562337105,
+        "normality": {
+          "statistic": 0.8534074363523476,
+          "p_value": 0.009588548671755265,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.26611328125,
+        "t_test": {
+          "t": 1.403384154869826,
+          "p_value": 0.1785043914811799,
+          "mean_diff": 0.10154914414242361,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 24.0,
+          "p_value": 0.26611328125,
+          "n_nonzero": 12
+        },
+        "permutation": {
+          "observed_mean_diff": 0.10154914414242361,
+          "p_value": 0.1807819218078192,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.33078081750606864,
+          "magnitude": "pequeño"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.02850147543855233,
+          "ci_high": 0.2493036703231099,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "ndcg@10": {
+        "mean_a": 0.7314142194537333,
+        "mean_b": 0.6870192775710786,
+        "delta": 0.04439494188265469,
+        "rel_delta": 0.06461964508421181,
+        "normality": {
+          "statistic": 0.9515173039882072,
+          "p_value": 0.44931413023943123,
+          "is_normal": true
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 0.7197265625,
+        "t_test": {
+          "t": 0.7486687918967475,
+          "p_value": 0.4642901167415272,
+          "mean_diff": 0.04439494188265476,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 53.0,
+          "p_value": 0.7197265625,
+          "n_nonzero": 15
+        },
+        "permutation": {
+          "observed_mean_diff": 0.044394941882654755,
+          "p_value": 0.48135186481351866,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.17646292653764345,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.06643104535771703,
+          "ci_high": 0.1646608180036309,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "p@1": {
+        "mean_a": 0.6666666666666666,
+        "mean_b": 0.6666666666666666,
+        "delta": 0.0,
+        "rel_delta": 0.0,
+        "normality": {
+          "statistic": 0.7616024195919306,
+          "p_value": 0.0004575336972340357,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 1.0,
+        "t_test": {
+          "t": 0.0,
+          "p_value": 1.0,
+          "mean_diff": 0.0,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 10.5,
+          "p_value": 1.0,
+          "n_nonzero": 6
+        },
+        "permutation": {
+          "observed_mean_diff": 0.0,
+          "p_value": 1.0,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.0,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.2777777777777778,
+          "ci_high": 0.2777777777777778,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "p@3": {
+        "mean_a": 0.3888888888888889,
+        "mean_b": 0.37037037037037035,
+        "delta": 0.018518518518518545,
+        "rel_delta": 0.05000000000000007,
+        "normality": {
+          "statistic": 0.7475055108047819,
+          "p_value": 0.0003013373977546627,
+          "is_normal": false
+        },
+        "recommended_test": "wilcoxon",
+        "recommended_reason": "n=18<20: muestra pequeña, Wilcoxon es la opción estándar",
+        "recommended_p_value": 1.0,
+        "t_test": {
+          "t": 0.2937591126138128,
+          "p_value": 0.7724982119184457,
+          "mean_diff": 0.01851851851851851,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 7.0,
+          "p_value": 1.0,
+          "n_nonzero": 5
+        },
+        "permutation": {
+          "observed_mean_diff": 0.01851851851851851,
+          "p_value": 1.0,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.06923968685485657,
+          "magnitude": "trivial"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.1111111111111111,
+          "ci_high": 0.12962962962962965,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "p@5": {
+        "mean_a": 0.3111111111111111,
+        "mean_b": 0.2777777777777778,
+        "delta": 0.033333333333333326,
+        "rel_delta": 0.11999999999999997,
+        "normality": {
+          "statistic": 0.6883139712947766,
+          "p_value": 5.858816228316922e-05,
+          "is_normal": false
+        },
+        "recommended_test": "permutation",
+        "recommended_reason": "métrica discreta con muchos empates posibles",
+        "recommended_p_value": 0.3735626437356264,
+        "t_test": {
+          "t": 1.3743685418725533,
+          "p_value": 0.18717600132108256,
+          "mean_diff": 0.033333333333333326,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 5.0,
+          "p_value": 0.5625,
+          "n_nonzero": 5
+        },
+        "permutation": {
+          "observed_mean_diff": 0.033333333333333326,
+          "p_value": 0.3735626437356264,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": 0.32394177193584994,
+          "magnitude": "pequeño"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.01111111111111112,
+          "ci_high": 0.07777777777777778,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      },
+      "p@10": {
+        "mean_a": 0.19444444444444445,
+        "mean_b": 0.20555555555555557,
+        "delta": -0.011111111111111127,
+        "rel_delta": -0.054054054054054126,
+        "normality": {
+          "statistic": 0.6420051380771499,
+          "p_value": 1.8199282227820032e-05,
+          "is_normal": false
+        },
+        "recommended_test": "permutation",
+        "recommended_reason": "métrica discreta con muchos empates posibles",
+        "recommended_p_value": 0.5002499750024998,
+        "t_test": {
+          "t": -1.0,
+          "p_value": 0.331332762038679,
+          "mean_diff": -0.011111111111111113,
+          "n": 18
+        },
+        "wilcoxon": {
+          "statistic": 2.0,
+          "p_value": 0.5,
+          "n_nonzero": 4
+        },
+        "permutation": {
+          "observed_mean_diff": -0.011111111111111113,
+          "p_value": 0.5002499750024998,
+          "n_resamples": 10000,
+          "n": 18
+        },
+        "cohens_d": {
+          "d": -0.23570226039551587,
+          "magnitude": "pequeño"
+        },
+        "bootstrap_ci": {
+          "ci_low": -0.03333333333333334,
+          "ci_high": 0.011111111111111112,
+          "confidence": 0.95,
+          "n_resamples": 10000
+        },
+        "adjusted_p_value": 1.0,
+        "significant_after_correction": false
+      }
+    }
+  },
+  "cer_loss_correlation": {
+    "metric": "ap",
+    "cer_query_mode": "mean_relevant",
+    "n": 18,
+    "normality_cer": {
+      "statistic": 0.8635927913444212,
+      "p_value": 0.013977051491049483,
+      "is_normal": false
+    },
+    "normality_loss": {
+      "statistic": 0.9091025582999721,
+      "p_value": 0.0829570059844694,
+      "is_normal": true
+    },
+    "pearson": {
+      "r": 0.5767790863265222,
+      "p_value": 0.0122147431500478
+    },
+    "spearman": {
+      "rho": 0.6477000457552838,
+      "p_value": 0.003656562308538189
+    },
+    "primary": "spearman",
+    "primary_reason": "se prefiere Spearman (monótona, robusta, sin supuesto de normalidad): CER no normal (Shapiro p=0.013977051491049483)",
+    "ols": {
+      "slope_per_unit_cer": 1.995775428870867,
+      "intercept": -0.1997758542346369
+    },
+    "points": [
+      {
+        "qid": "q01",
+        "cer": 0.03145425,
+        "ap_gt": 0.625,
+        "ap_ocr": 0.875,
+        "loss": -0.25
+      },
+      {
+        "qid": "q02",
+        "cer": 0.04272366666666667,
+        "ap_gt": 0.4777777777777777,
+        "ap_ocr": 0.7777777777777778,
+        "loss": -0.3000000000000001
+      },
+      {
+        "qid": "q03",
+        "cer": 0.1264035,
+        "ap_gt": 0.65,
+        "ap_ocr": 0.7333333333333333,
+        "loss": -0.08333333333333326
+      },
+      {
+        "qid": "q04",
+        "cer": 0.12290225,
+        "ap_gt": 0.875,
+        "ap_ocr": 0.95,
+        "loss": -0.07499999999999996
+      },
+      {
+        "qid": "q05",
+        "cer": 0.030071,
+        "ap_gt": 0.6111111111111112,
+        "ap_ocr": 0.6428571428571428,
+        "loss": -0.03174603174603163
+      },
+      {
+        "qid": "q06",
+        "cer": 0.0861505,
+        "ap_gt": 0.34090909090909094,
+        "ap_ocr": 0.2111111111111111,
+        "loss": 0.12979797979797983
+      },
+      {
+        "qid": "q07",
+        "cer": 0.151172,
+        "ap_gt": 0.7,
+        "ap_ocr": 0.30952380952380953,
+        "loss": 0.3904761904761904
+      },
+      {
+        "qid": "q08",
+        "cer": 0.12790800000000002,
+        "ap_gt": 0.5588235294117647,
+        "ap_ocr": 0.625,
+        "loss": -0.06617647058823528
+      },
+      {
+        "qid": "q09",
+        "cer": 0.07240533333333334,
+        "ap_gt": 0.19629629629629627,
+        "ap_ocr": 0.16893939393939394,
+        "loss": 0.02735690235690233
+      },
+      {
+        "qid": "q10",
+        "cer": 0.346667,
+        "ap_gt": 1.0,
+        "ap_ocr": 1.0,
+        "loss": 0.0
+      },
+      {
+        "qid": "q11",
+        "cer": 0.055118,
+        "ap_gt": 1.0,
+        "ap_ocr": 1.0,
+        "loss": 0.0
+      },
+      {
+        "qid": "q12",
+        "cer": 0.274254,
+        "ap_gt": 1.0,
+        "ap_ocr": 0.1,
+        "loss": 0.9
+      },
+      {
+        "qid": "q13",
+        "cer": 0.216981,
+        "ap_gt": 0.2,
+        "ap_ocr": 0.125,
+        "loss": 0.07500000000000001
+      },
+      {
+        "qid": "q14",
+        "cer": 0.083488,
+        "ap_gt": 1.0,
+        "ap_ocr": 1.0,
+        "loss": 0.0
+      },
+      {
+        "qid": "q15",
+        "cer": 0.018692,
+        "ap_gt": 0.5,
+        "ap_ocr": 1.0,
+        "loss": -0.5
+      },
+      {
+        "qid": "q16",
+        "cer": 0.13445833333333332,
+        "ap_gt": 0.8333333333333334,
+        "ap_ocr": 0.6555555555555556,
+        "loss": 0.1777777777777778
+      },
+      {
+        "qid": "q17",
+        "cer": 0.09400399999999999,
+        "ap_gt": 0.6324786324786325,
+        "ap_ocr": 0.2833333333333334,
+        "loss": 0.34914529914529907
+      },
+      {
+        "qid": "q18",
+        "cer": 0.034107,
+        "ap_gt": 0.41666666666666663,
+        "ap_ocr": 0.6666666666666666,
+        "loss": -0.25
+      }
+    ]
+  }
+}

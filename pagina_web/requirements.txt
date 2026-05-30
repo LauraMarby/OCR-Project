@@ -1,0 +1,34 @@
+# Django
+Django==4.2.30
+psycopg2-binary==2.9.11
+python-dotenv==1.2.2
+
+# Imagen y documentos
+Pillow>=10.0.0
+ebooklib==0.20
+reportlab==4.4.10
+
+# OCR y preprocesado
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+opencv-python>=4.7.0
+scipy>=1.10.0
+scikit-image>=0.21.0
+
+# Modelo HTR manuscrito (TrOCR fine-tuneado)
+transformers>=4.50.0
+sentencepiece>=0.2.1
+accelerate>=0.34.0
+safetensors>=0.4.0
+
+# Corrección ortográfica
+symspellpy>=6.7.0
+wordfreq>=3.0.0
+
+# Reranker BERT opcional (ONNX)
+onnxruntime>=1.16.0
+
+# Búsqueda
+rank_bm25>=0.2.2
+sentence-transformers>=2.2.0

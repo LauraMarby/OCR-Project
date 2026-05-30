@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Modelos y checkpoints (demasiado pesados para git)
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+final_model/
+final_model.zip
+trocr_model_original/
+*_finetuned/
+
+# Datasets de imágenes generados / descargados
+*.npy
+*.npz
+data/
+datasets/
+synthetic_output/
+
+# Cachés
+.cache/
+~/.ir_datasets/
+
+# Salidas de evaluación regenerables (pesadas)
+*.trec
+
+# Assets muy pesados (regenerar/descargar aparte si hace falta)
+generate_synthetic/backgrounds/detailed_paper_seamless_texture_8k_tile.png
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

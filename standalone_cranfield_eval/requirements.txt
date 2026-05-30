@@ -1,0 +1,20 @@
+# Dependencias estrictas para el standalone de evaluación
+# (independientes del proyecto OCR principal)
+
+# Lo mínimo absolutamente necesario:
+numpy>=1.24.0
+rank_bm25>=0.2.2
+
+# Loader de colecciones IR (Cranfield, BEIR, MS MARCO, TREC, etc.).
+# Es el estándar de facto en la literatura — los doc_id, query_id y
+# qrels coinciden con los de los papers publicados.
+ir_datasets>=0.5.5
+
+# Opcional pero MUY recomendado para tesis:
+#   - scipy para Wilcoxon signed-rank test (no se puede aproximar a mano
+#     de forma razonable) y para t-test exacto.
+scipy>=1.10.0
+
+# Opcional, sólo si vas a usar la búsqueda semántica E5:
+#   - sentence-transformers carga torch + transformers como deps
+sentence-transformers>=2.2.0

@@ -1,0 +1,787 @@
+{
+  "config": {
+    "dataset": "cranfield",
+    "text_fields": "auto-detected",
+    "model": "models\\models--intfloat--multilingual-e5-small\\snapshots\\614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "rrf_k": 60,
+    "binary_threshold": 1,
+    "methods": [
+      "bm25",
+      "semantic",
+      "hybrid"
+    ],
+    "ks": [
+      5,
+      10,
+      20,
+      100,
+      1000
+    ],
+    "top_k": 1000
+  },
+  "collection_stats": {
+    "name": "cranfield",
+    "num_docs": 1400,
+    "num_queries": 225,
+    "num_qrels": 1837
+  },
+  "aggregated_metrics": {
+    "bm25": {
+      "r_prec": 0.26959487959771755,
+      "map": 0.2718604936522962,
+      "mrr": 0.5026996463491584,
+      "p@5": 0.3066666666666667,
+      "r@5": 0.271512058012316,
+      "f1@5": 0.2581572183497435,
+      "p@10": 0.22044444444444444,
+      "r@10": 0.3721236475846899,
+      "f1@10": 0.2504469137095259,
+      "p@20": 0.1451111111111111,
+      "r@20": 0.47000920292870757,
+      "f1@20": 0.20511913452936584,
+      "p@100": 0.04608888888888889,
+      "r@100": 0.6837975004680371,
+      "f1@100": 0.08399982961946141,
+      "p@1000": 0.006835555555555556,
+      "r@1000": 0.9541015904937473,
+      "f1@1000": 0.013521600130796783,
+      "ndcg@5": 0.2493948253427363,
+      "ndcg@10": 0.27748621977884674,
+      "ndcg@20": 0.31281118670390295,
+      "ndcg@100": 0.37937356835123814,
+      "ndcg@1000": 0.43901857524156784
+    },
+    "semantic": {
+      "r_prec": 0.29380945123179386,
+      "map": 0.2862438564971628,
+      "mrr": 0.5251602380344175,
+      "p@5": 0.312,
+      "r@5": 0.2788201180484462,
+      "f1@5": 0.26229559037474,
+      "p@10": 0.2351111111111111,
+      "r@10": 0.3915394649592276,
+      "f1@10": 0.2641746856317685,
+      "p@20": 0.1537777777777778,
+      "r@20": 0.48586689641436803,
+      "f1@20": 0.2148095775509787,
+      "p@100": 0.04866666666666667,
+      "r@100": 0.7181723275959602,
+      "f1@100": 0.08849367340782582,
+      "p@1000": 0.007004444444444444,
+      "r@1000": 0.9793003682954663,
+      "f1@1000": 0.013855341765036723,
+      "ndcg@5": 0.25488631966696845,
+      "ndcg@10": 0.28987004846879566,
+      "ndcg@20": 0.3258737097982992,
+      "ndcg@100": 0.39572544243893343,
+      "ndcg@1000": 0.453214151084563
+    },
+    "hybrid": {
+      "r_prec": 0.32108436813158175,
+      "map": 0.31174835430835146,
+      "mrr": 0.5519793373764696,
+      "p@5": 0.34400000000000003,
+      "r@5": 0.30764459395857746,
+      "f1@5": 0.29090002610034515,
+      "p@10": 0.24888888888888888,
+      "r@10": 0.4155662400321843,
+      "f1@10": 0.2805952044196837,
+      "p@20": 0.16466666666666666,
+      "r@20": 0.5227206164148889,
+      "f1@20": 0.23098737938700634,
+      "p@100": 0.05071111111111111,
+      "r@100": 0.7475205785690822,
+      "f1@100": 0.09225140270607671,
+      "p@1000": 0.006982222222222222,
+      "r@1000": 0.9731988556106204,
+      "f1@1000": 0.013811642094678887,
+      "ndcg@5": 0.27769827675226466,
+      "ndcg@10": 0.3093527972625341,
+      "ndcg@20": 0.3489874838027037,
+      "ndcg@100": 0.419568680716993,
+      "ndcg@1000": 0.4714176443785918
+    }
+  },
+  "comparisons": [
+    {
+      "name_a": "bm25",
+      "name_b": "semantic",
+      "n_common_queries": 225,
+      "alpha": 0.05,
+      "multiple_comparison": "holm",
+      "n_resamples": 10000,
+      "seed": 42,
+      "tests": {
+        "ap": {
+          "mean_a": 0.2718604936522962,
+          "mean_b": 0.2862438564971628,
+          "delta": -0.014383362844866576,
+          "rel_delta": -0.050248634227051586,
+          "normality": {
+            "statistic": 0.9699402384457413,
+            "p_value": 0.00010313710581874611,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.1802819718028197,
+          "t_test": {
+            "t": -1.3509103365366377,
+            "p_value": 0.17808714810095355,
+            "mean_diff": -0.014383362844866571,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 11138.0,
+            "p_value": 0.2360936533676833,
+            "n_nonzero": 221
+          },
+          "permutation": {
+            "observed_mean_diff": -0.014383362844866573,
+            "p_value": 0.1802819718028197,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.09006068910244251,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.034985911089946344,
+            "ci_high": 0.006177089351902992,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.5408459154084592,
+          "significant_after_correction": false
+        },
+        "rr": {
+          "mean_a": 0.5026996463491584,
+          "mean_b": 0.5251602380344175,
+          "delta": -0.022460591685259046,
+          "rel_delta": -0.042769025639345995,
+          "normality": {
+            "statistic": 0.9338449713331654,
+            "p_value": 1.539240047614779e-08,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.3371662833716628,
+          "t_test": {
+            "t": -0.9628858281852122,
+            "p_value": 0.3366431191233298,
+            "mean_diff": -0.022460591685259018,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 5106.0,
+            "p_value": 0.29515444128461266,
+            "n_nonzero": 150
+          },
+          "permutation": {
+            "observed_mean_diff": -0.022460591685259018,
+            "p_value": 0.3371662833716628,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.06419238854568081,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.06848048311512803,
+            "ci_high": 0.023318885363117103,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.6129387061293871,
+          "significant_after_correction": false
+        },
+        "ndcg@10": {
+          "mean_a": 0.2774862197788468,
+          "mean_b": 0.28987004846879566,
+          "delta": -0.012383828689948861,
+          "rel_delta": -0.042722001653378736,
+          "normality": {
+            "statistic": 0.9675339909690857,
+            "p_value": 5.0238581935231214e-05,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.30646935306469353,
+          "t_test": {
+            "t": -1.028487553400905,
+            "p_value": 0.3048298244802451,
+            "mean_diff": -0.012383828689948908,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 9462.0,
+            "p_value": 0.404370497762384,
+            "n_nonzero": 201
+          },
+          "permutation": {
+            "observed_mean_diff": -0.012383828689948912,
+            "p_value": 0.30646935306469353,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.06856583689339368,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.03599407352242291,
+            "ci_high": 0.011567327294682874,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.6129387061293871,
+          "significant_after_correction": false
+        },
+        "p@10": {
+          "mean_a": 0.22044444444444444,
+          "mean_b": 0.2351111111111111,
+          "delta": -0.014666666666666661,
+          "rel_delta": -0.062381852551984855,
+          "normality": {
+            "statistic": 0.9240504620435883,
+            "p_value": 2.364008336551263e-09,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "métrica discreta con muchos empates posibles",
+          "recommended_p_value": 0.065993400659934,
+          "t_test": {
+            "t": -1.8879723961284163,
+            "p_value": 0.060322239640010135,
+            "mean_diff": -0.014666666666666668,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 3850.0,
+            "p_value": 0.0420918592411871,
+            "n_nonzero": 138
+          },
+          "permutation": {
+            "observed_mean_diff": -0.014666666666666666,
+            "p_value": 0.065993400659934,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.1258648264085611,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.02977777777777778,
+            "ci_high": 0.0004444444444444441,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.263973602639736,
+          "significant_after_correction": false
+        },
+        "r@100": {
+          "mean_a": 0.683797500468037,
+          "mean_b": 0.7181723275959602,
+          "delta": -0.03437482712792317,
+          "rel_delta": -0.0478643158571577,
+          "normality": {
+            "statistic": 0.9274575010663494,
+            "p_value": 4.4557104640388885e-09,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.022497750224977502,
+          "t_test": {
+            "t": -2.3075561696206393,
+            "p_value": 0.021936671202212873,
+            "mean_diff": -0.0343748271279231,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 3301.0,
+            "p_value": 0.02617686986189774,
+            "n_nonzero": 130
+          },
+          "permutation": {
+            "observed_mean_diff": -0.0343748271279231,
+            "p_value": 0.022497750224977502,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.15383707797470927,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.06373213115287418,
+            "ci_high": -0.005752883234088086,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.11248875112488751,
+          "significant_after_correction": false
+        }
+      }
+    },
+    {
+      "name_a": "bm25",
+      "name_b": "hybrid",
+      "n_common_queries": 225,
+      "alpha": 0.05,
+      "multiple_comparison": "holm",
+      "n_resamples": 10000,
+      "seed": 42,
+      "tests": {
+        "ap": {
+          "mean_a": 0.2718604936522962,
+          "mean_b": 0.31174835430835146,
+          "delta": -0.03988786065605526,
+          "rel_delta": -0.12794890527826822,
+          "normality": {
+            "statistic": 0.9462327772835321,
+            "p_value": 2.129149799216615e-07,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 9.999000099990002e-05,
+          "t_test": {
+            "t": -5.7253335991707495,
+            "p_value": 3.296635341656184e-08,
+            "mean_diff": -0.03988786065605526,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 6123.5,
+            "p_value": 7.323060993457828e-10,
+            "n_nonzero": 217
+          },
+          "permutation": {
+            "observed_mean_diff": -0.03988786065605526,
+            "p_value": 9.999000099990002e-05,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.38168890661138327,
+            "magnitude": "pequeño"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.05370008445445926,
+            "ci_high": -0.02657533838463482,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0004999500049995,
+          "significant_after_correction": true
+        },
+        "rr": {
+          "mean_a": 0.5026996463491584,
+          "mean_b": 0.5519793373764696,
+          "delta": -0.04927969102731122,
+          "rel_delta": -0.08927814447101434,
+          "normality": {
+            "statistic": 0.8379326674131654,
+            "p_value": 1.3627585894770649e-14,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.003999600039996,
+          "t_test": {
+            "t": -2.919300752795905,
+            "p_value": 0.0038662168862660796,
+            "mean_diff": -0.04927969102731119,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 2658.0,
+            "p_value": 0.0010659537265430726,
+            "n_nonzero": 126
+          },
+          "permutation": {
+            "observed_mean_diff": -0.049279691027311195,
+            "p_value": 0.003999600039996,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.19462005018639367,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.08249265980183718,
+            "ci_high": -0.016551156940541233,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.003999600039996,
+          "significant_after_correction": true
+        },
+        "ndcg@10": {
+          "mean_a": 0.2774862197788468,
+          "mean_b": 0.3093527972625342,
+          "delta": -0.031866577483687375,
+          "rel_delta": -0.10301047142833367,
+          "normality": {
+            "statistic": 0.9488667135076414,
+            "p_value": 3.8905460494536e-07,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.00039996000399960006,
+          "t_test": {
+            "t": -4.013616735978345,
+            "p_value": 8.156178500733195e-05,
+            "mean_diff": -0.031866577483687375,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 5784.0,
+            "p_value": 5.024670667739702e-05,
+            "n_nonzero": 187
+          },
+          "permutation": {
+            "observed_mean_diff": -0.031866577483687375,
+            "p_value": 0.00039996000399960006,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.26757444906522293,
+            "magnitude": "pequeño"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.04746459425357288,
+            "ci_high": -0.01616440150446953,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0007999200079992001,
+          "significant_after_correction": true
+        },
+        "p@10": {
+          "mean_a": 0.22044444444444444,
+          "mean_b": 0.24888888888888888,
+          "delta": -0.02844444444444444,
+          "rel_delta": -0.11428571428571427,
+          "normality": {
+            "statistic": 0.8468674199553057,
+            "p_value": 3.730862422010036e-14,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "métrica discreta con muchos empates posibles",
+          "recommended_p_value": 9.999000099990002e-05,
+          "t_test": {
+            "t": -5.020297226608173,
+            "p_value": 1.0518340956317866e-06,
+            "mean_diff": -0.028444444444444442,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 1273.0,
+            "p_value": 1.3394954345851196e-05,
+            "n_nonzero": 100
+          },
+          "permutation": {
+            "observed_mean_diff": -0.028444444444444446,
+            "p_value": 9.999000099990002e-05,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.3346864817738783,
+            "magnitude": "pequeño"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.03955555555555555,
+            "ci_high": -0.017333333333333333,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0004999500049995,
+          "significant_after_correction": true
+        },
+        "r@100": {
+          "mean_a": 0.683797500468037,
+          "mean_b": 0.7475205785690822,
+          "delta": -0.06372307810104516,
+          "rel_delta": -0.08524591821007131,
+          "normality": {
+            "statistic": 0.7918087160115104,
+            "p_value": 1.301950828158029e-16,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 9.999000099990002e-05,
+          "t_test": {
+            "t": -6.163157352686514,
+            "p_value": 3.2801671194692576e-09,
+            "mean_diff": -0.06372307810104508,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 768.5,
+            "p_value": 1.1986322911292012e-08,
+            "n_nonzero": 96
+          },
+          "permutation": {
+            "observed_mean_diff": -0.06372307810104508,
+            "p_value": 9.999000099990002e-05,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.41087715684576753,
+            "magnitude": "pequeño"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.08456045882126893,
+            "ci_high": -0.04388078242468078,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0004999500049995,
+          "significant_after_correction": true
+        }
+      }
+    },
+    {
+      "name_a": "semantic",
+      "name_b": "hybrid",
+      "n_common_queries": 225,
+      "alpha": 0.05,
+      "multiple_comparison": "holm",
+      "n_resamples": 10000,
+      "seed": 42,
+      "tests": {
+        "ap": {
+          "mean_a": 0.2862438564971628,
+          "mean_b": 0.31174835430835146,
+          "delta": -0.025504497811188687,
+          "rel_delta": -0.08181117064041368,
+          "normality": {
+            "statistic": 0.9570725327515979,
+            "p_value": 2.8676674429896787e-06,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.0006999300069993001,
+          "t_test": {
+            "t": -3.867574679304247,
+            "p_value": 0.00014410058903566796,
+            "mean_diff": -0.02550449781118869,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 7494.0,
+            "p_value": 2.8845263123174826e-06,
+            "n_nonzero": 217
+          },
+          "permutation": {
+            "observed_mean_diff": -0.02550449781118869,
+            "p_value": 0.0006999300069993001,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.25783831195361645,
+            "magnitude": "pequeño"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.03832249175331683,
+            "ci_high": -0.012784767924968306,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0034996500349965005,
+          "significant_after_correction": true
+        },
+        "rr": {
+          "mean_a": 0.5251602380344175,
+          "mean_b": 0.5519793373764696,
+          "delta": -0.026819099342052177,
+          "rel_delta": -0.04858714362302405,
+          "normality": {
+            "statistic": 0.8680184724230454,
+            "p_value": 4.823620262015482e-13,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.1095890410958904,
+          "t_test": {
+            "t": -1.591795300594227,
+            "p_value": 0.11284090321128146,
+            "mean_diff": -0.02681909934205217,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 3583.5,
+            "p_value": 0.08846197707829936,
+            "n_nonzero": 131
+          },
+          "permutation": {
+            "observed_mean_diff": -0.02681909934205217,
+            "p_value": 0.1095890410958904,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.10611968670628179,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.0601702518314525,
+            "ci_high": 0.005944168592533723,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.1095890410958904,
+          "significant_after_correction": false
+        },
+        "ndcg@10": {
+          "mean_a": 0.28987004846879566,
+          "mean_b": 0.3093527972625342,
+          "delta": -0.019482748793738514,
+          "rel_delta": -0.06297906133754581,
+          "normality": {
+            "statistic": 0.9519095523925779,
+            "p_value": 7.981753423874206e-07,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.0115988401159884,
+          "t_test": {
+            "t": -2.615106291930841,
+            "p_value": 0.00952584892071229,
+            "mean_diff": -0.01948274879373847,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 6545.5,
+            "p_value": 0.0017552610429204974,
+            "n_nonzero": 188
+          },
+          "permutation": {
+            "observed_mean_diff": -0.01948274879373847,
+            "p_value": 0.0115988401159884,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.17434041946205608,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.034196226842450106,
+            "ci_high": -0.0047621512069224705,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0347965203479652,
+          "significant_after_correction": true
+        },
+        "p@10": {
+          "mean_a": 0.2351111111111111,
+          "mean_b": 0.24888888888888888,
+          "delta": -0.013777777777777778,
+          "rel_delta": -0.05535714285714286,
+          "normality": {
+            "statistic": 0.8544053932117379,
+            "p_value": 9.014814692451771e-14,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "métrica discreta con muchos empates posibles",
+          "recommended_p_value": 0.0160983901609839,
+          "t_test": {
+            "t": -2.519394605323052,
+            "p_value": 0.012453318150681233,
+            "mean_diff": -0.013777777777777776,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 1938.5,
+            "p_value": 0.05759764462489712,
+            "n_nonzero": 99
+          },
+          "permutation": {
+            "observed_mean_diff": -0.013777777777777776,
+            "p_value": 0.0160983901609839,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.1679596403548701,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.024444444444444446,
+            "ci_high": -0.0031111111111111096,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.0347965203479652,
+          "significant_after_correction": true
+        },
+        "r@100": {
+          "mean_a": 0.7181723275959602,
+          "mean_b": 0.7475205785690822,
+          "delta": -0.029348250973121992,
+          "rel_delta": -0.03926079336745613,
+          "normality": {
+            "statistic": 0.7374503866329087,
+            "p_value": 1.3040113570053925e-18,
+            "is_normal": false
+          },
+          "recommended_test": "permutation",
+          "recommended_reason": "Shapiro p=0.000≤0.05 (no normal); permutación es robusta y precisa en IR",
+          "recommended_p_value": 0.004199580041995801,
+          "t_test": {
+            "t": -2.8365583853874314,
+            "p_value": 0.004978166893790917,
+            "mean_diff": -0.029348250973121975,
+            "n": 225
+          },
+          "wilcoxon": {
+            "statistic": 1287.0,
+            "p_value": 0.0022064215869005417,
+            "n_nonzero": 90
+          },
+          "permutation": {
+            "observed_mean_diff": -0.029348250973121975,
+            "p_value": 0.004199580041995801,
+            "n_resamples": 10000,
+            "n": 225
+          },
+          "cohens_d": {
+            "d": -0.1891038923591621,
+            "magnitude": "trivial"
+          },
+          "bootstrap_ci": {
+            "ci_low": -0.04939693863259395,
+            "ci_high": -0.009266149319090537,
+            "confidence": 0.95,
+            "n_resamples": 10000
+          },
+          "adjusted_p_value": 0.016798320167983202,
+          "significant_after_correction": true
+        }
+      }
+    }
+  ]
+}

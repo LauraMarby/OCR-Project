@@ -1,0 +1,40 @@
+# Dependencias del proyecto OCR de manuscritos.
+# Probado con Python 3.13. Instalar con: pip install -r requirements.txt
+# (Para GPU, instalar antes torch siguiendo https://pytorch.org/get-started/ )
+
+# --- Núcleo numérico / imagen ---
+numpy>=1.26
+scipy>=1.11
+opencv-python>=4.9
+Pillow>=10.0
+scikit-image>=0.22
+
+# --- Modelos OCR / deep learning ---
+torch>=2.1
+torchvision>=0.16
+transformers>=4.50
+sentencepiece>=0.2.1        # requerido por el tokenizer de TrOCR
+
+# --- Recuperación de información (SRI híbrido) ---
+rank-bm25>=0.2.2
+sentence-transformers>=5.0  # encoder E5 para el retriever semántico
+ir-datasets>=0.5            # colecciones IR estándar (Cranfield, etc.)
+
+# --- Aumento de datos (generación sintética / data_augmentation) ---
+albumentations>=1.4
+
+# --- Métricas de evaluación (CER/WER) ---
+editdistance>=0.6
+python-Levenshtein>=0.25
+
+# --- Análisis y notebooks ---
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.13
+scikit-learn>=1.3
+tqdm>=4.66
+jupyter>=1.0
+ipython>=8.0
+
+# --- OCR alternativo usado en notebooks de comparación ---
+python-doctr>=0.8
