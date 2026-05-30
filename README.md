@@ -74,16 +74,6 @@ Para GPU, instala primero `torch`/`torchvision` con la versión de CUDA
 correspondiente siguiendo https://pytorch.org/get-started/ y luego el resto
 del `requirements.txt`.
 
-## Dependencia faltante: `preprocessing_utils`
-
-`ocr_models/hcr.py` y los notebooks `hcr_work.ipynb` / `testing.ipynb`
-importan un módulo `preprocessing_utils` (`preprocess_image`,
-`preprocess_array`, `preprocess_image_binarized`, `resize_img`, ...) que
-**no está incluido** en este repositorio. La lógica equivalente vive en
-`binarize/preprocessing/`. Antes de ejecutar el CRNN hay que proporcionar
-ese módulo, por ejemplo creando un `preprocessing_utils.py` que reexporte
-las funciones del paquete `binarize/preprocessing`, o ajustando los imports.
-
 ## Flujo de trabajo típico
 
 1. **Generar datos sintéticos** con `generate_synthetic/manuscript_generator.py`
